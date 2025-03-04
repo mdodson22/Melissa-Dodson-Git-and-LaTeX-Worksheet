@@ -1,0 +1,111 @@
+\documentclass[10pt,twocolumn]{article}
+
+% use the oxycomps style file
+\usepackage{oxycomps}
+
+% usage: \fixme[comments describing issue]{text to be fixed}
+% define \fixme as not doing anything special
+\newcommand{\fixme}[2][]{#2}
+% overwrite it so it shows up as red
+\renewcommand{\fixme}[2][]{\textcolor{red}{#2}}
+% overwrite it again so related text shows as footnotes
+%\renewcommand{\fixme}[2][]{\textcolor{red}{#2\footnote{#1}}}
+
+% read references.bib for the bibtex data
+\bibliography{references}
+
+% include metadata in the generated pdf file
+\pdfinfo{
+    /Title (Git and LaTeX Worksheet)
+    /Author (Justin Li)
+}
+
+% set the title and author information
+\title{Git and \LaTeX Worksheet}
+\author{Justin Li}
+\affiliation{Occidental College}
+\email{justinnhli@oxy.edu}
+
+\begin{document}
+
+\maketitle
+
+\section{Instructions}
+
+This worksheet is due March 1, 2025 at midnight, to be submitted as a GitHub repository URL to Canvas. The repository should contain all files requires to compile this worksheet with your answers. You should only change this \texttt{document.tex} file and the  \texttt{references.bib} file; do not change any other file in this starting repository. You should not use any additional packages, and are not allowed to use the \texttt{{\textbackslash}usepackage\{\}} command. Additionally, the output should be formatted correctly: your answers should be appropriately nested under the questions, command-line commands should be in monospace, and images should be positioned appropriately.
+
+\section{Git Questions}
+
+\subsection{General questions}
+
+\begin{enumerate}
+    \item What is a version control system? Why are they useful?
+    \item What is the difference between git and GitHub?
+    \item What is a repository?
+    \item What is a commit?
+    \item What is the commit graph?
+    \item What is your preferred local git client (eg., command line, GitHub Desktop, GitKraken, etc.)?
+\end{enumerate}
+
+\subsection{Local Usage}
+
+\begin{enumerate}
+\item What is the difference between adding a file to the staging area and committing a file?
+\item What is a commit message, and why is it important for them to be meaningful?
+\item Starting with an empty repository, what sequence of commands/actions would result in the following commit graph? You may give a sequence of \texttt{git} commands, or describe (with screenshots) how you would do this in your preferred graphical git interface.
+\begin{verbatim}
+A---B---C---D
+\end{verbatim}
+\item If you are currently at commit D above, how would you recover code from commit B? What sequence of commands/actions would let you do so? You may give a sequence of \texttt{git} command-line commands, or describe (with screenshots) how you would do this in your preferred graphical git interface. Assume the commit hashes are AAAAAA..., BBBBBB..., etc.
+\item Imagine you created a git repository for your project, but only commit your changes once a week on Sundays. You got your code working on Tuesday, but then broke your code on Friday. What can you do to get the working version of your code back?
+\end{enumerate}
+
+\subsection{Branching and Merging}
+
+\begin{enumerate}
+\item What is a branch? Why are they useful?
+\item Starting with an empty repository, what sequence of commands/actions would result in the following commit graph? You may give a sequence of \texttt{git} command-line commands, or describe (with screenshots) how you would do this in your preferred graphical git interface.
+\begin{verbatim}
+A---B---C---D
+     \
+      E---F
+\end{verbatim}
+\item Why is a merge? Why are they useful?
+\item Imagine you are currently at commit D above. What sequence of commands/actions would result in the following commit graph? You may give a sequence of \texttt{git} commands, or describe (with screenshots) how you would do this in your preferred graphical git interface.
+\begin{verbatim}
+A---B---C---D---G
+     \         /
+      E---F---/
+\end{verbatim}
+\item What is a merge conflict? When do they occur?
+\item Starting with an empty repository, despite a sequence of commands/actions that would result in a merge conflict. Include the exact edits and \texttt{git} commands or screenshots of the graphical git interface. Include the output or screenshot that shows the resulting merge conflict.
+\end{enumerate}
+
+\subsection{Remotes}
+
+\begin{enumerate}
+\item What is a remote?
+\item What does pushing and pulling do?
+\item Imagine you created a git repository for your project on your laptop and commit regularly, but only push your code to GitHub once a week on Sundays. Your laptop caught on fire on Friday. What can you do to get your code back?
+\end{enumerate}
+
+\section{\LaTeX}
+
+Find a source of each of the following types and add it to \texttt{references.bib}, with the appropriate data. Your sources do not have to relate to your project. Looking at \textcite{OverleafBibliographyManagement} and \textcite{WikipediaBibtex} may be helpful,
+
+\begin{itemize}
+\item a journal article
+\item a conference article
+\item a PhD or Master's thesis
+\item an article in an edited popular media venue (newspaper, magazine, etc.)
+\item a book
+\item a chapter of a book
+\item a YouTube video
+\item a piece of technical documentation (e.g., a programming language reference, and API documentation, etc.)
+\end{itemize}
+
+Additionally, in you own words, explain the difference between \texttt{{\textbackslash}cite\{\}} and \texttt{{\textbackslash}textcite\{\}}. When should they each be used? Demonstrate your answers by using one of them with each of your references from above.
+
+\printbibliography
+
+\end{document}
